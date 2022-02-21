@@ -1,0 +1,101 @@
+section {
+  margin-left: 50px;
+  margin-right:  50px;
+  margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+}
+
+h1 {
+  font-weight: lighter;
+  font-size: 30px;
+  color: #2e3236;
+}
+
+.card-title{
+  text-align: center;
+}
+
+/*Cards custom styles*/
+.stock-card {
+  width: 302px;
+  height: 460px;
+  border-radius: 16px;
+  padding-bottom: 30px;
+  margin-top: 30px;
+}
+
+.main-info-card {
+  text-align: center;
+}
+
+.profit-card {
+  text-align: center;
+}
+
+.mat-card-actions{
+  text-align: center;
+}
+/*Buttom*/
+.process-buttom {
+  width: 180px;
+  height: 44px;
+  border-radius: 22px;
+  background-color: rgb(0, 90, 214);
+}
+
+.select-stock-buttom{
+  color: rgb(0, 90, 214);
+  border-radius: 22px;
+  width: 180px;
+  height: 44px;
+}
+
+.mat-form-field {
+  width: 270px;
+}
+
+
+/*Card processed profit*/
+.processed-profit-card-content {
+  margin-top: 60px;
+}
+
+.processed-percentage {
+  font-size: 60px;
+  margin-top: 30px;
+}
+
+.positive-result{
+  color: green;
+}
+
+.negative-result {
+  color:red;
+}
+
+.new-process {
+  align-items: end;
+}
+
+.p-processed-card{
+  margin-bottom: 0px;
+}
+
+.again-buttom{
+  margin-top: 90px;
+}
+
+/*loading card*/
+img.loading-image {
+  margin-top: 150px;
+}
+
+
+

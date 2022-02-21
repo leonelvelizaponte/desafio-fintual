@@ -1,0 +1,87 @@
+<main>
+  <!--CALCULATOR CARD-->
+  <section *ngIf="calculatorFlag">
+    <mat-card class="stock-card mat-elevation-z8">
+      <mat-card-header>
+        <div class="card-title">
+          <mat-card-title>Calculadora de Profit/Loss</mat-card-title>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <form class="steped-form">
+          <div class="step-1">
+            <h3>Selecciona la acción a simular</h3>
+            <mat-form-field appearance="outline">
+              <mat-label>Acciones disponibles</mat-label>
+              <mat-select [(ngModel)]="selectedStock" name='selectedStock'>
+                <mat-option value="NFLX">Netflix</mat-option>
+                <mat-option value="TSLA">Tesla</mat-option>
+                <mat-option value="GOOGL">Google</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="step-2">
+            <h3>Ingresa la fecha de inicio</h3>
+            <mat-form-field appearance="outline">
+              <input matInput [(ngModel)]="initDate" name='initDate' [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="step-3">
+            <h3>Ingresa la fecha final 🏁</h3>
+            <mat-form-field appearance="outline">
+              <input matInput [(ngModel)]="endDate" name='endDate' [matDatepicker]="picker2">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="process-buttom" (click)="processProfit()">Calcular mi profit/loss</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+  <!--LOADING CARD-->
+  <section *ngIf="loadingFlag">
+    <mat-card class="stock-card mat-elevation-z8">
+      <img src="/assets/fintualoader.gif" class="loading-image" />
+    </mat-card>
+  </section>
+  <!--RESULT CARD-->
+  <section *ngIf="resultFlag">
+    <mat-card class="stock-card mat-elevation-z8">
+      <mat-card-header>
+        <div class="card-title">
+          <mat-card-title>Calculadora de Profit/Loss</mat-card-title>
+        </div>
+      </mat-card-header>
+      <mat-card-content class="processed-profit-card-content">
+        <div>
+          <p class="p-processed-card">Para la acción:</p>
+          <h2>{{displayStock}}</h2>
+        </div>
+        <div>
+          <p class="p-processed-card">entre las fechas</p>
+          <h2> {{this.displayInitDate}} / {{this.displayEndDate}}</h2>
+        </div>
+        <div>
+          <p class="p-processed-card">tuvo un rendimiento de:</p>
+        </div>
+        <div>
+          <h1 class="processed-percentage positive-result" *ngIf="positiveFlag"><b>{{displayProfit}}</b> </h1>
+        </div>
+        <div>
+          <h1 class="processed-percentage negative-result" *ngIf="negativeFlag"><b>{{displayProfit}}</b> </h1>
+        </div>
+        <div>
+          <h1 class="processed-percentage" *ngIf="zeroFlag"><b>{{displayProfit}}</b> </h1>
+        </div>
+      </mat-card-content>
+      <mat-card-actions class="again-buttom">
+        <button mat-raised-button color="primary" class="process-buttom new-process" (click)="repeat()">🤑 Calcular de nuevo</button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+</main>

@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "2e29bc16-d3e9-4b38-8b2d-e877142d861d",
+		"name": "Fintual",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ProfitByDates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/stock/NFLX/2015-12/2020-2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stock",
+						"NFLX",
+						"2015-12",
+						"2020-2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProfitByYear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/stock/year/NFLX/2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"stock",
+						"year",
+						"NFLX",
+						"2021"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
